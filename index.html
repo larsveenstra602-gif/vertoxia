@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertoxia - In Ontwikkeling</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0c10; 
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            max-width: 600px;
+            padding: 40px 20px;
+        }
+        .logo-container {
+            margin-bottom: 30px;
+        }
+        .logo {
+            width: 180px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 180, 219, 0.2); 
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #7b59ff, #00b4db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #8f9cae;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .loader {
+            border: 3px solid rgba(255, 255, 255, 0.05);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border-left-color: #00b4db; 
+            animation: spin 1.2s linear infinite;
+            margin: 0 auto;
+        }
+        
+        /* Footer elementen onderin */
+        .terms-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #8f9cae;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .terms-button:hover {
+            color: #00b4db;
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 20px;
+            color: #526071;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        @keyframes spin {
+            0 { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Vertoxia Logo" class="logo">
+        </div>
+        <h1>VERTOXIA</h1>
+        <p>Onze nieuwe website is momenteel in ontwikkeling.<br>Kom binnenkort terug om het resultaat te bekijken!</p>
+        <div class="loader"></div>
+    </div>
+
+    <!-- Link links onderin -->
+    <a href="algemene-voorwaarden.html" class="terms-button">Algemene voorwaarden</a>
+
+    <!-- Copyright gecentreerd onderin -->
+    <div class="copyright">&copy; 2026 Vertoxia. Alle rechten voorbehouden.</div>
+
+</body>
+</html>
