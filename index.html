@@ -20,7 +20,6 @@
             min-height: 100vh;
             text-align: center;
         }
-        /* Het hoofdgedeelte in het midden */
         .main-content {
             flex: 1;
             display: flex;
@@ -65,7 +64,6 @@
             margin: 0 auto;
         }
         
-        /* De nieuwe, flexibele footer onderin */
         footer {
             display: flex;
             justify-content: space-between;
@@ -75,15 +73,15 @@
             background-color: rgba(17, 20, 26, 0.4);
             border-top: 1px solid rgba(143, 156, 174, 0.05);
         }
-        .terms-button {
+        .footer-link {
             color: #8f9cae;
             text-decoration: none;
             font-size: 0.85rem;
             letter-spacing: 1px;
             transition: color 0.3s ease;
         }
-        .terms-button:hover {
-            color: #00b4db;
+        .footer-link:hover {
+            color: #00b4db; 
         }
         .copyright {
             color: #526071;
@@ -91,12 +89,14 @@
             letter-spacing: 1px;
         }
 
-        /* Responsive aanpassing voor mobiel: onder elkaar in plaats van naast elkaar */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             footer {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
                 padding: 20px;
+            }
+            .copyright {
+                order: 3;
             }
         }
 
@@ -108,7 +108,6 @@
 </head>
 <body>
 
-    <!-- Midden van de pagina -->
     <div class="main-content">
         <div class="container">
             <div class="logo-container">
@@ -120,12 +119,12 @@
         </div>
     </div>
 
-    <!-- De nieuwe, veilige footer onderin -->
     <footer>
-        <a href="algemene-voorwaarden.html" class="terms-button">Algemene voorwaarden</a>
+        <a href="algemene-voorwaarden.html" class="footer-link">Algemene voorwaarden</a>
         <div class="copyright">&copy; 2026 Vertoxia. Alle rechten voorbehouden.</div>
+        <!-- Linkt nu naar de aparte support pagina -->
+        <a href="support.html" class="footer-link">Support</a>
     </footer>
 
 </body>
 </html>
-
