@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertoxia - Support</title>
+   <link id="favicon" rel="icon" type="image/png" href="logo.png">
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const img = new Image();
+        img.src = 'logo.png';
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 32;
+            canvas.height = 32;
+            const ctx = canvas.getContext('2d');
+            
+            // Maak een perfect ronde cirkel om in te snijden
+            ctx.beginPath();
+            ctx.arc(16, 16, 16, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.clip();
+            
+            // Teken het logo erin
+            ctx.drawImage(img, 0, 0, 32, 32);
+            
+            // Update de favicon link met de ronde versie
+            document.getElementById('favicon').href = canvas.toDataURL('image/png');
+        };
+    });
+</script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0c10; 
+            color: #ffffff;
+            line-height: 1.7;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #11141a;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(143, 156, 174, 0.1);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #7b59ff, #00b4db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            color: #8f9cae;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+        .support-card {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 180, 219, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            box-shadow: 0 0 20px rgba(0, 180, 219, 0.02);
+        }
+        .support-card h2 {
+            font-size: 1.1rem;
+            color: #00b4db;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .email-link {
+            display: inline-block;
+            color: #7b59ff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            margin-top: 5px;
+        }
+        .email-link:hover {
+            color: #00b4db;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(143, 156, 174, 0.1);
+        }
+        .back-button {
+            color: #8f9cae;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .back-button:hover {
+            color: #7b59ff;
+        }
+        .terms-copyright {
+            color: #526071;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vertoxia Support</h1>
+        <p>Heb je vragen, suggesties of support nodig met betrekking tot ons gaming platform? We staan voor je klaar.</p>
+
+        <div class="support-card">
+            <h2>E-mail Contact</h2>
+            <p style="margin-bottom: 5px; font-size: 0.9rem;">Stuur ons een bericht en we reageren zo snel mogelijk:</p>
+            <a href="mailto:vertoxiaofficial@gmail.com" class="email-link">vertoxiaofficial@gmail.com</a>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html" class="back-button">&larr; Terug naar de homepagina</a>
+            <div class="terms-copyright">&copy; 2026 Vertoxia.</div>
+        </div>
+    </div>
+
+</body>
+</html>
