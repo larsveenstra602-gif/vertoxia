@@ -1,38 +1,440 @@
+
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertoxia - In Ontwikkeling</title>
-    <link id="favicon" rel="icon" type="image/png" href="logo.png">
+
+    <meta name="theme-color" content="#15151b">
+    <meta name="description" content="Discover Vertoxia, a gaming platform for discovering games, exploring new experiences and having fun.">
+
+    <meta property="og:title" content="Vertoxia — Discover More">
+    <meta property="og:description" content="Explore games and discover your next favorite experience.">
+    <meta property="og:type" content="website">
+
+    <title>Vertoxia — Discover More</title>
+
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
+
 <body>
 
-    <div class="main-content">
-        <div class="container">
-            <div class="logo-container">
-                <img src="logo.png" alt="Vertoxia Logo" class="logo">
-            </div>
-            <h1>VERTOXIA</h1>
-            <p>Onze website is momenteel in ontwikkeling.<br>next generation of gaming!</p>
-            <div class="loader"></div>
-        </div>
-    </div>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar container">
 
-    <footer>
-        <a href="algemene-voorwaarden.html" class="footer-link">Algemene voorwaarden</a>
-        <div class="copyright">&copy; 2026 Vertoxia. Alle rechten voorbehouden.</div>
-        <a href="support.html" class="footer-link">Support</a>
+            <a href="#" class="brand" aria-label="Vertoxia home">
+                <span class="brand-icon">V</span>
+                <span>VERTOXIA</span>
+            </a>
+
+            <button class="menu-toggle"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                    aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#games">Games</a>
+                <a href="#about">About</a>
+                <a href="#faq">FAQ</a>
+                <a href="support.html" class="nav-support">Support ↗</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- Hero / Featured Game -->
+        <section class="hero container">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    WELCOME TO VERTOXIA
+                </div>
+
+                <h1>
+                    Discover your<br>
+                    next <span class="gradient-text">adventure.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover games, explore new experiences and
+                    find something worth playing. Welcome to Vertoxia.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#games" class="button button-primary">
+                        Explore Games <span>→</span>
+                    </a>
+
+                    <a href="#about" class="button button-secondary">
+                        About Vertoxia
+                    </a>
+                </div>
+
+                <div class="hero-caption">
+                    <span class="caption-line"></span>
+                    YOUR NEXT EXPERIENCE STARTS HERE
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Featured Game -->
+        <section class="featured-section container" id="featured">
+
+            <div class="section-top">
+                <div>
+                    <div class="eyebrow">HANDPICKED FOR YOU</div>
+                    <h2>Featured <span class="gradient-text">Game</span></h2>
+                </div>
+
+                <span class="section-number">01 / FEATURED</span>
+            </div>
+
+            <article class="featured-card">
+
+                <div class="featured-visual">
+                    <div class="featured-decoration decoration-one"></div>
+                    <div class="featured-decoration decoration-two"></div>
+                    <div class="featured-symbol">V</div>
+
+                    <span class="visual-label">VERTOXIA ORIGINALS</span>
+                    <span class="visual-index">01</span>
+                </div>
+
+                <div class="featured-info">
+
+                    <div class="game-status">
+                        <span class="status-dot"></span>
+                        COMING SOON
+                    </div>
+
+                    <h3>Something New<br>Is Coming.</h3>
+
+                    <p>
+                        We're working on new gaming experiences.
+                        Stay tuned to discover what's coming next.
+                    </p>
+
+                    <a href="#games" class="text-link">
+                        Discover the platform <span>→</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- Games -->
+        <section class="games-section container" id="games">
+
+            <div class="section-top">
+                <div>
+                    <div class="eyebrow">EXPLORE THE COLLECTION</div>
+                    <h2>Discover <span class="gradient-text">Games.</span></h2>
+                </div>
+
+                <p class="section-description">
+                    Explore what Vertoxia has to offer.
+                    More experiences are on their way.
+                </p>
+            </div>
+
+            <div class="games-grid">
+
+                <article class="game-card">
+
+                    <div class="game-art art-purple">
+                        <span class="game-art-number">01</span>
+                        <span class="game-art-symbol">✦</span>
+                        <span class="game-art-category">ARCADE</span>
+                    </div>
+
+                    <div class="game-card-content">
+
+                        <div class="card-meta">
+                            <span class="badge badge-purple">In Development</span>
+                        </div>
+
+                        <h3>Arcade Experiences</h3>
+
+                        <p>
+                            Fun and engaging arcade experiences
+                            designed for everyone.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="game-card">
+
+                    <div class="game-art art-blue">
+                        <span class="game-art-number">02</span>
+                        <span class="game-art-symbol">◇</span>
+                        <span class="game-art-category">EXPLORATION</span>
+                    </div>
+
+                    <div class="game-card-content">
+
+                        <div class="card-meta">
+                            <span class="badge badge-blue">Planned</span>
+                        </div>
+
+                        <h3>New Worlds</h3>
+
+                        <p>
+                            Discover new ideas, worlds and
+                            possibilities through gaming.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="game-card">
+
+                    <div class="game-art art-pink">
+                        <span class="game-art-number">03</span>
+                        <span class="game-art-symbol">∞</span>
+                        <span class="game-art-category">COMMUNITY</span>
+                    </div>
+
+                    <div class="game-card-content">
+
+                        <div class="card-meta">
+                            <span class="badge badge-pink">Planned</span>
+                        </div>
+
+                        <h3>Community Experiences</h3>
+
+                        <p>
+                            A place for players to connect,
+                            share ideas and explore together.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="games-footer">
+                <span>MORE EXPERIENCES ARE IN DEVELOPMENT.</span>
+                <span>VERTOXIA ©</span>
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="about-section" id="about">
+
+            <div class="container about-container">
+
+                <div class="about-label">
+                    <div class="eyebrow">ABOUT VERTOXIA</div>
+                    <span class="about-big-letter">V</span>
+                </div>
+
+                <div class="about-content">
+
+                    <h2>
+                        Built for players.<br>
+                        Made for <span class="gradient-text">discovery.</span>
+                    </h2>
+
+                    <p>
+                        Vertoxia is an independent gaming platform
+                        focused on creating and sharing enjoyable
+                        gaming experiences.
+                    </p>
+
+                    <p>
+                        Our goal is to build a place where players
+                        can discover games, explore new ideas and
+                        experience something different.
+                    </p>
+
+                    <a href="support.html" class="text-link">
+                        Get in touch <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAQ -->
+        <section class="faq-section container" id="faq">
+
+            <div class="section-top">
+                <div>
+                    <div class="eyebrow">NEED SOME HELP?</div>
+                    <h2>Frequently Asked <span class="gradient-text">Questions.</span></h2>
+                </div>
+            </div>
+
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary>
+                        What is Vertoxia?
+                        <span class="faq-icon">+</span>
+                    </summary>
+
+                    <p>
+                        Vertoxia is an independent gaming platform
+                        focused on games and new gaming experiences.
+                    </p>
+                </details>
+
+
+                <details class="faq-item">
+                    <summary>
+                        Are Vertoxia games free?
+                        <span class="faq-icon">+</span>
+                    </summary>
+
+                    <p>
+                        Availability and pricing may differ between
+                        games. Details will be provided with each release.
+                    </p>
+                </details>
+
+
+                <details class="faq-item">
+                    <summary>
+                        Are new games coming?
+                        <span class="faq-icon">+</span>
+                    </summary>
+
+                    <p>
+                        Yes! New experiences are being planned
+                        and developed. Check back for updates.
+                    </p>
+                </details>
+
+
+                <details class="faq-item">
+                    <summary>
+                        How can I contact Vertoxia?
+                        <span class="faq-icon">+</span>
+                    </summary>
+
+                    <p>
+                        Visit our support page to find out how
+                        to get in touch with us.
+                    </p>
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact CTA -->
+        <section class="contact-section container">
+
+            <div class="contact-card">
+
+                <div class="eyebrow">WE'RE HERE TO HELP</div>
+
+                <h2>
+                    Let's talk<span class="gradient-text">.</span>
+                </h2>
+
+                <p>
+                    Have a question, suggestion or problem?
+                    We'd love to hear from you.
+                </p>
+
+                <a href="support.html" class="button button-primary">
+                    Visit Support <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container footer-main">
+
+            <div class="footer-brand">
+
+                <a href="#" class="brand">
+                    <span class="brand-icon">V</span>
+                    <span>VERTOXIA</span>
+                </a>
+
+                <p>
+                    Discover more. Experience more.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>EXPLORE</h4>
+
+                <a href="#games">Games</a>
+                <a href="#featured">Featured</a>
+                <a href="#about">About</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>SUPPORT</h4>
+
+                <a href="support.html">Contact</a>
+                <a href="#faq">FAQ</a>
+                <a href="algemene-voorwaarden.html">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <span>
+                © <span id="current-year">2026</span> Vertoxia.
+                All rights reserved.
+            </span>
+
+            <span class="footer-signature">
+                MADE FOR THE LOVE OF GAMES.
+            </span>
+
+        </div>
+
     </footer>
 
-    <div id="cookieBanner" class="cookie-banner">
-        <div class="cookie-text">
-            Vertoxia gebruikt functionele cookies om de website soepel te laten werken en spelprestaties te onthouden. Door op accepteren te klikken ga je hiermee akkoord. Lees meer in onze <a href="algemene-voorwaarden.html">algemene voorwaarden</a>.
-        </div>
-        <button id="acceptCookies" class="cookie-btn">Accepteren</button>
-    </div>
-
-    <script src="app.js"></script>
 </body>
 </html>
