@@ -1,43 +1,203 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Dynamic Circular Favicon Generation
-    const faviconElement = document.getElementById('favicon');
-    if (faviconElement) {
-        const img = new Image();
-        img.src = 'logo.png';
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-            canvas.width = 32;
-            canvas.height = 32;
-            const ctx = canvas.getContext('2d');
-            
-            // Create circular clip path
-            ctx.beginPath();
-            ctx.arc(16, 16, 16, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.clip();
-            
-            // Draw image into cropped canvas
-            ctx.drawImage(img, 0, 0, 32, 32);
-            
-            // Update favicon link source
-            faviconElement.href = canvas.toDataURL('image/png');
-        };
+
+/* =========================================
+   VERTOXIA — JAVASCRIPT
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // -------------------------------------
+    // MOBILE NAVIGATION
+    // -------------------------------------
+
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".nav-links");
+
+    function closeMenu() {
+        if (!menuButton || !navigation) return;
+
+        menuButton.classList.remove("active");
+        navigation.classList.remove("open");
+
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+
+        document.body.classList.remove("menu-open");
     }
 
-    // Cookie Banner Logic
-    const banner = document.getElementById("cookieBanner");
-    const acceptBtn = document.getElementById("acceptCookies");
+    if (menuButton && navigation) {
 
-    if (banner && acceptBtn) {
-        if (!localStorage.getItem("cookiesAccepted")) {
-            setTimeout(() => {
-                banner.classList.add("show");
-            }, 1000);
-        }
+        menuButton.addEventListener("click", () => {
 
-        acceptBtn.addEventListener("click", function () {
-            localStorage.setItem("cookiesAccepted", "true");
-            banner.classList.remove("show");
+            const isOpen =
+                menuButton.getAttribute("aria-expanded") === "true";
+
+            menuButton.classList.toggle("active", !isOpen);
+            navigation.classList.toggle("open", !isOpen);
+
+            menuButton.setAttribute("aria-expanded", String(!isOpen));
+
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Open navigation" : "Close navigation"
+            );
+
+            document.body.classList.toggle("menu-open", !isOpen);
+
         });
+
+        // Close menu when a link is selected
+
+        navigation.querySelectorAll("a").forEach(link => {
+
+            link.addEventListener("click", closeMenu);
+
+        });
+
+        // Close menu with Escape
+
+        document.addEventListener("keydown", event => {
+
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+
+        });
+
+        // Close menu when clicking outside
+
+        document.addEventListener("click", event => {
+
+            if (
+                navigation.classList.contains("open") &&
+                !navigation.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+                closeMenu();
+            }
+
+        });
+
+        // Reset mobile navigation when resizing to desktop
+
+        window.addEventListener("resize", () => {
+
+            if (window.innerWidth > 650) {
+                closeMenu();
+            }
+
+        });
+
     }
+
+
+    // -------------------------------------
+    // AUTOMATIC COPYRIGHT YEAR
+    // -------------------------------------
+
+    const yearElement = document.getElementById("current-year");
+
+    if (yearElement) {
+
+        yearElement.textContent = new Date().getFullYear();
+
+    }
+
+
+    // -------------------------------------
+    // FAQ
+    // -------------------------------------
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+
+        const summary = item.querySelector("summary");
+
+        if (!summary) return;
+
+        summary.addEventListener("keydown", event => {
+
+            if (event.key === "Enter" || event.key === " ") {
+
+                event.preventDefault();
+
+                item.open = !item.open;
+
+            }
+
+        });
+
+    });
+
+
+    // -------------------------------------
+    // SMOOTH INTERNAL NAVIGATION
+    // -------------------------------------
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", event => {
+
+            const targetId = link.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+
+                event.preventDefault();
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+                return;
+
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+
+    // -------------------------------------
+    // FEATURED GAME LINK
+    // -------------------------------------
+
+    const featuredLink = document.querySelector(
+        ".featured-info .text-link"
+    );
+
+    if (featuredLink) {
+
+        featuredLink.addEventListener("click", () => {
+
+            console.log("Vertoxia: Exploring games.");
+
+        });
+
+    }
+
+
+    // -------------------------------------
+    // INITIALIZATION
+    // -------------------------------------
+
+    console.log("--------------------------------");
+    console.log("VERT OXIA WEBSITE INITIALIZED");
+    console.log("Website version: 1.0");
+    console.log("Status: Ready");
+    console.log("--------------------------------");
+
 });
