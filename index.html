@@ -89,10 +89,10 @@
             letter-spacing: 1px;
         }
 
-        /* STYLING VOOR DE COOKIE MELDING */
+        /* VERBETERDE STYLING VOOR DE COOKIE MELDING */
         .cookie-banner {
             position: fixed;
-            bottom: -100px;
+            bottom: -200px; /* Meer ruimte om op te bergen buiten beeld */
             left: 50%;
             transform: translateX(-50%);
             width: calc(100% - 40px);
@@ -106,7 +106,7 @@
             align-items: center;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
             z-index: 9999;
-            transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: bottom 0.4s ease-in-out;
             text-align: left;
         }
         .cookie-banner.show {
@@ -142,6 +142,7 @@
             box-shadow: 0 0 15px rgba(0, 180, 219, 0.4);
         }
 
+        /* SPECIFIEKE FIXES VOOR MOBIELE SCHERMEN */
         @media (max-width: 768px) {
             footer {
                 flex-direction: column;
@@ -151,15 +152,28 @@
             .copyright {
                 order: 3;
             }
+            /* Mobiele fix voor de cookie-banner */
             .cookie-banner {
                 flex-direction: column;
                 text-align: center;
                 gap: 15px;
                 padding: 20px;
-                width: calc(100% - 20px);
+                width: 100%;
+                border-radius: 12px 12px 0 0; /* Alleen afronding aan de bovenkant */
+                border-left: none;
+                border-right: none;
+                border-bottom: none;
+                bottom: -300px;
+            }
+            .cookie-banner.show {
+                bottom: 0; /* Strak aan de onderkant vastzetten op mobiel */
             }
             .cookie-text {
                 padding-right: 0;
+            }
+            .cookie-btn {
+                width: 100%; /* Knop tikt makkelijker op mobiel */
+                padding: 12px 24px;
             }
         }
 
@@ -188,7 +202,6 @@
         <a href="support.html" class="footer-link">Support</a>
     </footer>
 
-    <!-- COOKIE BANNER HTML -->
     <div id="cookieBanner" class="cookie-banner">
         <div class="cookie-text">
             Vertoxia gebruikt functionele cookies om de website soepel te laten werken en spelprestaties te onthouden. Door op accepteren te klikken ga je hiermee akkoord. Lees meer in onze <a href="algemene-voorwaarden.html">algemene voorwaarden</a>.
@@ -196,21 +209,17 @@
         <button id="acceptCookies" class="cookie-btn">Accepteren</button>
     </div>
 
-    <!-- JAVASCRIPT VOOR DE COOKIE LOGICA -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const banner = document.getElementById("cookieBanner");
             const acceptBtn = document.getElementById("acceptCookies");
 
-            // Controleer of de gebruiker de cookies al eens heeft geaccepteerd
             if (!localStorage.getItem("cookiesAccepted")) {
-                // Toon de banner na 1 seconde met een vloeiende animatie
                 setTimeout(() => {
                     banner.classList.add("show");
                 }, 1000);
             }
 
-            // Actie wanneer er op accepteren wordt geklikt
             acceptBtn.addEventListener("click", function () {
                 localStorage.setItem("cookiesAccepted", "true");
                 banner.classList.remove("show");
